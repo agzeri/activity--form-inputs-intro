@@ -181,7 +181,7 @@ alert("All information was sent.")
 
 ## Show an extra div if the user selected is "Admin"
 
-**Use the same code, but in another pen.*
+**Use the same code, but in another pen.**
 
 1. In the HTML, add a new section that contains a label and a new input.
 ```html
@@ -254,7 +254,7 @@ if (selected === "Admin") {
 }
 ```
 
-**Test the box, select Admin and see what happend. Now select Guest. Fix the error. **
+**Test the box, select Admin and see what happend. Now select Guest. Fix the error.**
 
 6. Hide the box if the option selected is "Guest"
 ```diff
