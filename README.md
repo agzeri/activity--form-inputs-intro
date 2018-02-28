@@ -177,15 +177,88 @@ alert("All information was sent.")
 + }
 ```
 
+# Second Example
 
+## Show an extra div if the user selected is "Admin"
 
+**Use the same code, but in another pen.*
 
+1. In the HTML, add a new section that contains a label and a new input.
+```html
+<div>
+  <label for="">CODE:</label>
+  <input type="text" placeholder="Enter your secret code" />  
+</div>
+```
 
+2. Add a class to the new div. We’ll use it to control the display.
+```diff
++ <div class="onlyAdmin">
+  <label for="">CODE:</label>
+  <input type="text" placeholder="Enter your secret code" />  
+</div>
+```
 
+3. Hide by default that container.
+```css
+.onlyAdmin {
+  display: none;
+}
+```
 
+4. Now, create a class that help us to show the container.
+```css
+.onlyAdmin.show {
+  display: block;
+}
+```
 
+**Test manually the class.**
 
+#### Obtain the option selected from `select` element.
 
+1. Save in a variable the `select` element. This should be outside callback function from `form` event listener.
+```js
+const userType = document.querySelector("select")
+```
 
+2. Add an event to listen when the select change.
+```js
+userType.addEventListener("change", function() {})
+```
 
+**Test with a `console.log` to see what it’s happening.**
 
+```diff
+userType.addEventListener("change", function() {
++ console.log("it’s changing...")
+})
+```
+
+**Test in the browser**
+
+3. Get the content from the selected option.
+```js
+const selected = userType.options[userType.selectedIndex].textContent;
+```
+
+4. Ask if option is equal to "Admin"
+```js
+if (selected === "Admin") {}
+```
+
+5. Show the box if the condition is true.
+```diff
+if (selected === "Admin") {
++ document.querySelector(".onlyAdmin").classList.add("show")
+}
+```
+
+**Test the box, select Admin and see what happend. Now select Guest. Fix the error. **
+
+6. Hide the box if the option selected is "Guest"
+```diff
++ else {
++ document.querySelector(".onlyAdmin").classList.remove("show")
+}
+```
